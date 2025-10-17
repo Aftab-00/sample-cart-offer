@@ -1,0 +1,10 @@
+Bug_ID,Test_Case_ID,Bug_Title,Severity,Category,Expected_Behavior,Actual_Behavior,Business_Impact,Status,Reproducible,Environment
+BUG-001,TC008,Missing User ID Validation,HIGH,Input Validation,HTTP 400 error for invalid user_id (999),HTTP 200 with successful processing,Security risk - API processes requests for non-existent users,Open,Yes,Development
+BUG-002,TC009,Missing Restaurant ID Validation,HIGH,Input Validation,HTTP 400 error for invalid restaurant_id (999),HTTP 200 with successful processing,API accepts invalid restaurant IDs without validation,Open,Yes,Development
+BUG-003,TC010,Negative Cart Value Accepted,MEDIUM,Input Validation,HTTP 400 error for negative cart value (-100),HTTP 200 with successful processing,Business logic error - negative cart values should be rejected,Open,Yes,Development
+BUG-004,TC011,Missing Required Parameter Validation,MEDIUM,Input Validation,HTTP 400 error when restaurant_id is missing,HTTP 200 with successful processing,API processes incomplete requests,Open,Yes,Development
+BUG-005,TC012,Negative Cart Values Allowed in Calculations,CRITICAL,Business Logic,Cart value = 0 (capped at zero),Cart value = -100 (negative value),Critical business logic error - customers could have negative cart values,Open,Yes,Development
+BUG-006,TC014,Over 100% Percentage Discount Bug,CRITICAL,Business Logic,Cart value = 0 (capped at zero),Cart value = -100 (negative value),Mathematical error in percentage calculation,Open,Yes,Development
+BUG-007,TC015,Zero Cart Negative Value Bug,HIGH,Business Logic,Cart value = 0 (no change),Cart value = -10 (negative value),Edge case not handled properly,Open,Yes,Development
+BUG-008,TC003,Best Offer Selection Not Working,HIGH,Business Logic,Cart value = 170 (best discount of 15%),Cart value = 190 (only 10% discount applied),Customers not getting the best available discount,Open,Yes,Development
+
